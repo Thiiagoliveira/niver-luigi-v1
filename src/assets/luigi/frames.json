@@ -1,0 +1,31 @@
+{
+  "source": "https://www.spriters-resource.com/nintendo_switch/papermariotheorigamiking/asset/136282/",
+  "folder": "Individual frames/1/R",
+  "cell": {
+    "width": 160,
+    "height": 272
+  },
+  "frames": [
+    27,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    121,
+    115
+  ],
+  "idle": 0,
+  "walk": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "pipe": 7,
+  "celebrate": 8,
+  "note": "R artwork faces screen-left. Mirrored horizontally in CSS for screen-right. Alpha bounds centered at a shared feet baseline, without rescaling or repainting."
+}

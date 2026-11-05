@@ -1,0 +1,47 @@
+<div class="sky" aria-hidden="true">
+  <div class="sun" [style.transform]="layer(5)"><span></span></div>
+  <div class="clouds" [style.transform]="layer(24)">
+    <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="cloud cloud-three"></div>
+    <span class="little-star star-one">✧</span><span class="little-star star-two">✧</span>
+  </div>
+  <svg class="mountains" viewBox="0 0 1600 900" preserveAspectRatio="none" [style.transform]="layer(36)">
+    <path class="mountain-back" d="M-100 740 70 442Q90 414 112 442L329 740 556 476Q575 453 594 475L820 740 1166 435Q1180 424 1196 442L1530 740 1700 520V900H-100Z"/>
+    <path class="mountain-fold" d="m90 429 130 310H0Zm1090 5 104 305h155Z"/>
+    <path class="mountain-snow" d="m90 429-38 65 37-13 26 20 17-11 17 15ZM1180 434l-58 51 33-2 22 21 22-11 35 16Z"/>
+  </svg>
+  <svg class="hills distant" viewBox="0 0 1600 900" preserveAspectRatio="none" [style.transform]="layer(54)">
+    <path d="M-80 770V642Q130 438 351 634T765 638Q964 447 1180 632T1700 574V900H-80Z"/>
+    <path class="fold" d="M-80 770V642Q130 438 351 634T765 638Q964 447 1180 632T1700 574V900H-80Z"/>
+  </svg>
+  <svg class="hills near" viewBox="0 0 1600 900" preserveAspectRatio="none" [style.transform]="layer(84)">
+    <path d="M-80 785V734Q170 547 408 709Q560 814 746 691Q1030 511 1253 695Q1450 795 1700 630V900H-80Z"/>
+    <path class="hill-seam" d="M-30 756Q170 574 408 728M829 672q230-118 409 38"/>
+    <g class="hill-sprinkles"><path d="m185 665 4-12m15 12 5-12m741-6 5-13m16 14 5-10m427 85 4-14m16 17 4-12"/></g>
+  </svg>
+
+  <div class="decor" [style.transform]="layer(38)">
+    <div class="paper-tree tree-one"><div class="trunk"></div><div class="crown"></div><i></i></div>
+    <div class="paper-tree tree-two"><div class="trunk"></div><div class="crown"></div><i></i></div>
+    <div class="paper-tree tree-three"><div class="trunk"></div><div class="crown"></div><i></i></div>
+    @if (!party) {
+      <div class="question-block"><span>?</span></div>
+      <div class="coin coin-one"></div><div class="coin coin-two"></div><div class="coin coin-three"></div>
+      <div class="sign"><span>A FESTA É POR AQUI <b>→</b></span><i></i></div>
+      <div class="mushroom"><i></i><span></span></div>
+    } @else {
+      <div class="bunting"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="balloon balloon-one"><i></i></div><div class="balloon balloon-two"><i></i></div>
+      <div class="party-table"><div class="cake"><i></i><i></i><i></i><span></span></div><div class="table-top"></div><div class="table-legs"></div></div>
+      <div class="gift gift-one"><i></i></div><div class="gift gift-two"><i></i></div>
+      <span class="confetti c1"></span><span class="confetti c2"></span><span class="confetti c3"></span><span class="confetti c4"></span><span class="confetti c5"></span>
+    }
+  </div>
+  <div class="ground"><div class="grass-edge"></div><div class="ground-stitch"></div></div>
+  <div class="foreground" [style.transform]="layer(110)">
+    <div class="bush bush-one"></div><div class="bush bush-two"></div>
+    <div class="flower flower-one"><span>✿</span><i></i></div><div class="flower flower-two"><span>✿</span><i></i></div><div class="flower flower-three"><span>✿</span><i></i></div>
+    <svg class="grass grass-one" viewBox="0 0 52 30"><path d="M4 29Q0 9 8 4q12 8 14 25Q23 7 32 2q5 12 2 27Q42 11 49 14l-8 15"/></svg>
+    <svg class="grass grass-two" viewBox="0 0 52 30"><path d="M4 29Q0 9 8 4q12 8 14 25Q23 7 32 2q5 12 2 27Q42 11 49 14l-8 15"/></svg>
+  </div>
+  <div class="paper-grain"></div>
+</div>

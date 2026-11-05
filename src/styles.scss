@@ -1,0 +1,11 @@
+@font-face { font-family:'Fraunces'; src:url('/assets/fonts/fraunces-normal.ttf') format('truetype'); font-style:normal; font-weight:100 900; font-display:swap; }
+@font-face { font-family:'Fraunces'; src:url('/assets/fonts/fraunces-italic.ttf') format('truetype'); font-style:italic; font-weight:100 900; font-display:swap; }
+@font-face { font-family:'Nunito'; src:url('/assets/fonts/nunito.ttf') format('truetype'); font-style:normal; font-weight:200 1000; font-display:swap; }
+*,*::before,*::after { box-sizing:border-box; }
+html { margin:0; background:#f6f4e7; scroll-behavior:auto; }
+body { margin:0; font-family:'Nunito',sans-serif; color:#2e513c; -webkit-font-smoothing:antialiased; }
+button,a { -webkit-tap-highlight-color:transparent; }
+button { font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer; }
+button:focus-visible,a:focus-visible { outline:2px solid #a36c47; outline-offset:6px; border-radius:3px; }
+button:hover { color:#a96e4c; }
+::selection { background:#dfbd7e; color:#244c36; }

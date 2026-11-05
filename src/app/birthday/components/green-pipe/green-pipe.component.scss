@@ -1,0 +1,8 @@
+:host { position: absolute; inset: 0; pointer-events: none; }
+.pipe-back, .pipe-front { position: absolute; }
+.pipe-back { z-index: 30; padding: 3px 5px 0; }
+.opening { height: 23px; border: 5px solid #256648; border-bottom-width: 8px; border-radius: 50%; background: #163c2c; box-shadow: 0 -3px 0 #a5cc6c; }
+.pipe-front { z-index: 50; filter: drop-shadow(4px 5px 0 #284b3526); }
+.body { position: absolute; top: 26px; bottom: 0; left: 9%; right: 9%; background: linear-gradient(90deg, #388148 0 12%, #69ab53 12% 28%, #84bd5b 28% 39%, #61a24a 39% 78%, #367a41 78%); border: 3px solid #316c40; border-top: 0; border-radius: 0 0 3px 3px; }
+.lip { position: absolute; top: 14px; height: 25px; width: 100%; border-radius: 1px 1px 5px 5px; background: linear-gradient(90deg, #378947 0 10%, #a7cf72 10% 25%, #81ba58 25% 78%, #428843 78%); border: 3px solid #326a3e; border-top: 3px solid #b4d58a; box-shadow: 0 4px 0 #25573340; }
+.lip i { position: absolute; left: 27%; top: 0; width: 3px; height: 100%; background: #c2dc8d70; }

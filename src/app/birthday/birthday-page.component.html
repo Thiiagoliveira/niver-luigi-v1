@@ -1,0 +1,64 @@
+<main #journey class="journey" id="aventura">
+  <div #stage class="stage" [class.reduced-motion]="reducedMotion()" [attr.data-phase]="state().phase"
+    [attr.data-progress]="state().progress" [attr.data-camera]="state().camera">
+    <a class="skip-link" href="#controles">Ir para os controles da aventura</a>
+    <header class="masthead">
+      <button class="brand" (click)="goTo(0)" aria-label="Voltar ao início da aventura">
+        <span class="brand-emblem">L</span>
+        <span class="brand-name">Luigi<span>UMA AVENTURA DE ANIVERSÁRIO</span></span>
+      </button>
+      <nav aria-label="Capítulos" class="chapter-nav">
+        <button [class.active]="state().progress < 0.57" [attr.aria-current]="state().progress < 0.57 ? 'step' : null" (click)="goTo(0)"><span>01</span> A aventura</button>
+        <span class="nav-dash"></span>
+        <button [class.active]="state().progress >= 0.57" [attr.aria-current]="state().progress >= 0.57 ? 'step' : null" (click)="goTo(0.84)"><span>02</span> A festa</button>
+      </nav>
+      <span class="header-note"><span>✳</span> FEITO DE PAPEL & IMAGINAÇÃO</span>
+    </header>
+
+    <div class="world-stack" [style.transform]="'translate3d(0, -' + state().camera + 'px, 0)'">
+      <section class="world world-one" aria-label="Primeiro cenário: mundo das colinas" [attr.aria-hidden]="state().progress > 0.65">
+        <app-paper-cut-scene [progress]="state().progress" [reducedMotion]="reducedMotion()" />
+        <div class="scene-copy intro-copy">
+          <p class="eyebrow"><span></span> UM PEQUENO HERÓI. UM GRANDE DIA.</p>
+          <h1>Uma aventura<br>chamada <em>Luigi.</em></h1>
+          <p class="description">Entre colinas de papel e caminhos mágicos,<br>um aniversário especial espera por você.</p>
+          <button class="scroll-invitation" (click)="goTo(0.12)"><span class="mouse-icon"><i></i></span> Role para continuar <span class="arrow">↓</span></button>
+        </div>
+        <span class="scene-number" aria-hidden="true">MUNDO<br><b>01</b></span>
+        <app-green-pipe [x]="metrics().firstPipe" [ground]="metrics().ground" [width]="metrics().pipeWidth" [height]="metrics().pipeHeight" />
+        <app-luigi-character [pose]="state().first" [height]="metrics().characterHeight" [direction]="direction()" [moving]="moving()" />
+        <span class="character-caption" [style.left.px]="metrics().firstPipe" aria-hidden="true">a próxima fase ↓</span>
+      </section>
+
+      <section class="world world-two" aria-label="Segundo cenário: mundo da festa" [attr.aria-hidden]="state().progress < 0.49">
+        <app-paper-cut-scene [party]="true" [progress]="state().progress - 0.65" [reducedMotion]="reducedMotion()" />
+        <div class="scene-copy party-copy">
+          <p class="eyebrow"><span>✦</span> CAPÍTULO 02 · O MELHOR DESTINO</p>
+          <h2>A próxima fase:<br><em>celebrar juntos.</em></h2>
+          <p class="description">Você está convidado para a aventura do Luigi!</p>
+          <p class="party-footnote">O grande dia está ganhando forma. E você faz parte dele.</p>
+        </div>
+        <span class="scene-number" aria-hidden="true">MUNDO<br><b>02</b></span>
+        <app-green-pipe [x]="metrics().secondPipe" [ground]="metrics().ground" [width]="metrics().pipeWidth" [height]="metrics().pipeHeight" />
+        <app-luigi-character [pose]="state().second" [height]="metrics().characterHeight" [direction]="direction()" [moving]="moving()" />
+        <span class="arrival-note" [class.visible]="state().progress >= 0.98">Oba! Você chegou. <span>✦</span></span>
+      </section>
+    </div>
+
+    <footer class="journey-controls" id="controles" tabindex="-1">
+      <div class="story-status"><span class="status-dot"></span><span aria-live="polite">{{ phaseLabels[state().phase] }}</span></div>
+      <nav class="journey-map" aria-label="Progresso da aventura">
+        <button (click)="goTo(0)" aria-label="Início"><span class="map-dot done"></span></button>
+        <span class="map-line"><i [style.width.%]="state().progress * 100"></i></span>
+        <button (click)="goTo(0.43)" aria-label="Entrada no cano"><span class="map-dot" [class.done]="state().progress >= 0.395"></span></button>
+        <span class="map-line"><i [style.width.%]="state().progress * 100"></i></span>
+        <button (click)="goTo(1)" aria-label="Chegada à festa"><span class="map-dot" [class.done]="state().progress >= 0.98"></span></button>
+        <span class="progress-label">{{ (state().progress * 100).toFixed(0).padStart(2, '0') }}<span> / 100</span></span>
+      </nav>
+      <button class="motion-toggle" (click)="reducedMotion.set(!reducedMotion())" [attr.aria-pressed]="reducedMotion()" aria-label="Reduzir o efeito parallax">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6q3-4 6 0t6 0 4 0M2 13q3-4 6 0t6 0 4 0"/></svg>
+        {{ reducedMotion() ? 'Menos movimento' : 'Parallax ativado' }}
+      </button>
+    </footer>
+  </div>
+</main>
